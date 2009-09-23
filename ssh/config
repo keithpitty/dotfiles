@@ -1,0 +1,32 @@
+# Cockatoo Software
+# Dev slice (Octopus)
+Host cdv
+  HostName cockatoodev.com
+  User deploy
+  Port 22
+
+# Production slice (rimuhosting)
+Host kp
+  HostName keithpitty.com
+  User keith
+  Port 22
+
+# Blake Publishing (Reading Eggs)
+# production
+Host re1 # Known as ey03-s00379 at Blake
+ Hostname     74.201.254.36
+ Port         8379
+ HostKeyAlias ey03-s00379
+ User         blakepub
+Host re2 # Known as ey03-s00380 at Blake
+ Hostname     74.201.254.36
+ Port         8380
+ HostKeyAlias ey03-s00380
+ User         blakepub
+
+# staging
+Host res # Known as ey03-s00246 at Blake
+ Hostname     74.201.254.36
+ Port         8246
+ HostKeyAlias ey03-s00246
+ User         blakepub

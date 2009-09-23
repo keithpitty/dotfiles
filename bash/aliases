@@ -1,0 +1,71 @@
+# Rails
+alias ss='./script/server'
+alias sc='./script/console'
+alias sd='./script/dbconsole'
+alias sg='./script/generate'
+alias sp='./script/plugin install'
+alias r='rake'
+alias rmig='rake db:migrate'
+alias rtp='rake db:test:prepare'
+
+# Ruby
+alias irb='irb --readline -r irb/completion'
+alias rii='ri -Tf ansi'
+alias gemi='sudo gem install'
+alias gemin='sudo gem install --no-rdoc --no-ri'
+
+# Change to working directories
+alias cddf='cd ~/bin/dotfiles'
+alias cdcs='cd ~/work/cockatoo'
+alias cdkp='cd ~/work/kpdotcom'
+alias cdir='cd ~/work/isitrorosydyet'
+alias cdre='cd ~/work/readingeggs'
+alias cdsw='cd ~/work/swellnet'
+
+# Processes
+alias tu='top -o cpu' #cpu
+alias tm='top -o vsize' # memory
+
+# Abbreviated bash commands
+alias h='history'
+alias l='ls -l'
+alias ll='ls -l'
+alias la='ls -al'
+alias lh='ls -lh'
+alias lg='ls -lG'
+# Create a directory and change to it
+function take {
+	mkdir $1
+	cd $1
+}
+
+# Quick editing and reloading
+alias reload='source ~/.bashrc' # reload shell
+alias ea='mate ~/bin/dotfiles/bash/aliases && reload' # edit aliases and reload
+
+# MySQL
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+
+# Git
+alias g='git status'
+alias gi='git init'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdm='git diff master'
+alias gl='git pull'
+alias gp='git push'
+alias gst='git status'
+# Commit pending changes and quote all args as message
+function gg() {
+	git commit -v -a -m "$*"
+}
+# Set up a tracking branch from [remote] [branch_name]
+function gbt() {
+	git branch --track $2 $1/$2
+	git checkout $2
+}

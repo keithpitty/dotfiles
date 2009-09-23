@@ -1,0 +1,17 @@
+In user's home directory the following are defined:
+
+*  the .bashrc file contains one line:
+
+. ~/bin/dotfiles/bashrc
+
+*  the .bash_profile sources the .bashrc as follows:
+
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi
+
+In the user's .ssh directory a symbolic link to the ssh config using:
+
+  ln -s ~/bin/dotfiles/ssh/config ~/.ssh/config
+  
+That is all.
