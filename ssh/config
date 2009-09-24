@@ -14,19 +14,42 @@ Host kp
 # Blake Publishing (Reading Eggs)
 # production
 Host re1 # Known as ey03-s00379 at Blake
- Hostname     74.201.254.36
- Port         8379
- HostKeyAlias ey03-s00379
- User         blakepub
+  Hostname     74.201.254.36
+  Port         8379
+  HostKeyAlias ey03-s00379
+  User         blakepub
+Host ey03-s00379
+  Hostname     74.201.254.36
+  Port         8379
+  HostKeyAlias ey03-s00379
+  User         blakepub
+ 
 Host re2 # Known as ey03-s00380 at Blake
- Hostname     74.201.254.36
- Port         8380
- HostKeyAlias ey03-s00380
- User         blakepub
+  Hostname     74.201.254.36
+  Port         8380
+  HostKeyAlias ey03-s00380
+  User         blakepub
+Host ey03-s00380
+  Hostname     74.201.254.36
+  Port         8380
+  HostKeyAlias ey03-s00380
+  User         blakepub
 
 # staging
 Host res # Known as ey03-s00246 at Blake
- Hostname     74.201.254.36
- Port         8246
- HostKeyAlias ey03-s00246
- User         blakepub
+   Hostname     74.201.254.36
+   Port         8246
+   HostKeyAlias ey03-s00246
+   User         blakepub
+Host ey03-s00246
+  Hostname     74.201.254.36
+  Port         8246
+  HostKeyAlias ey03-s00246
+  User         blakepub
+  
+# Swellnet
+# production beta
+Host sw
+  Hostname swell2009.swellnet.com.au
+  Port 22
+  User deploy

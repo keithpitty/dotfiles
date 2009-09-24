@@ -5,7 +5,7 @@ alias sd='./script/dbconsole'
 alias sg='./script/generate'
 alias sp='./script/plugin install'
 alias r='rake'
-alias rmig='rake db:migrate'
+alias rmg='rake db:migrate'
 alias rtp='rake db:test:prepare'
 
 # Ruby
