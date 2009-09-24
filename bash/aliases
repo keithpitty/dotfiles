@@ -60,6 +60,8 @@ alias gdm='git diff master'
 alias gl='git pull'
 alias gp='git push'
 alias gst='git status'
+alias gr='git rebase'
+alias gm='git merge'
 # Commit pending changes and quote all args as message
 function gg() {
 	git commit -v -a -m "$*"
