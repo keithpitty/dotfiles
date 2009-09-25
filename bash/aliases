@@ -14,7 +14,9 @@ alias rii='ri -Tf ansi'
 alias gemi='sudo gem install'
 alias gemin='sudo gem install --no-rdoc --no-ri'
 
-# Change to working directories
+# Change to directories
+alias ..='cd ..'
+alias cdh='cd ~'
 alias cddf='cd ~/bin/dotfiles'
 alias cddl='cd ~/Downloads'
 alias cdcs='cd ~/work/cockatoo'
