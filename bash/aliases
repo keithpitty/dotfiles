@@ -16,6 +16,7 @@ alias gemin='sudo gem install --no-rdoc --no-ri'
 
 # Change to working directories
 alias cddf='cd ~/bin/dotfiles'
+alias cddl='cd ~/Downloads'
 alias cdcs='cd ~/work/cockatoo'
 alias cdkp='cd ~/work/kpdotcom'
 alias cdir='cd ~/work/isitrorosydyet'
@@ -44,12 +45,24 @@ alias reload='source ~/.bashrc' # reload shell
 alias ea='mate ~/bin/dotfiles/bash/aliases && reload' # edit aliases and reload
 
 # MySQL
+
+alias ms=/usr/local/mysql/bin/mysql
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+alias msa=/usr/local/mysql/bin/mysqladmin
+alias mst='sudo mysqld_safe'
+alias msp='mysqladmin -u root shutdown'
+
+# Apache
+alias apr='sudo /usr/sbin/apachectl restart'
+alias apst='sudo /usr/sbin/apachectl -k start'
+alias apsp='sudo /usr/sbin/apachectl graceful-stop'
+alias apce='sudo mate /private/etc/apache2/httpd.conf' #edit apache config
 
 # Git
 alias g='git status'
 alias gi='git init'
+alias ga='git add'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git commit -v'

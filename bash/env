@@ -2,4 +2,5 @@ export EDITOR="mate -w"
 export GIT_EDITOR="mate -wl1"
 export COCKATOO_GIT_USER="cockatoosoftware_keith"
 export JAVA_HOME=/Library/Java/Home
-export PATH=~/bin:/usr/local/mysql/bin:/usr/local/bin:$PATH
+export ARCHFLAGS="-arch x86_64"
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
