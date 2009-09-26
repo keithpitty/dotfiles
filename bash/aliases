@@ -86,3 +86,8 @@ function gbt() {
 	git branch --track $2 $1/$2
 	git checkout $2
 }
+# Add remote repo on unfuddle
+function gru() {
+  git remote add origin git@cockatoosoftware.unfuddle.com:cockatoosoftware/$1.git
+  git config remote.origin.push refs/heads/master:refs/heads/master
+}
