@@ -10,6 +10,12 @@ Host kp
   HostName keithpitty.com
   User keith
   Port 22
+  
+# bivou.ac
+Host biv
+  HostName bivou.ac
+  User bivouac
+  Port 22
 
 # Blake Publishing (Reading Eggs)
 # production
