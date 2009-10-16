@@ -27,6 +27,9 @@ alias rsm='spec spec/models'
 alias c='cucumber'
 alias cf='cucumber features'
 
+# Capistrano
+alias capsd='cap staging deploy'
+
 # Change to directories
 alias ..='cd ..'
 alias cdh='cd ~'
