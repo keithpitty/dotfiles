@@ -40,6 +40,7 @@ alias cdkp='cd ~/work/kpdotcom'
 alias cdir='cd ~/work/isitrorosydyet'
 alias cdre='cd ~/work/readingeggs'
 alias cdsw='cd ~/work/swellnet'
+alias cdrt='cd ~/work/rmetime'
 alias cdcv='cd ~/work/conversations'
 alias cdcvp='cd /u/apps/conversations/current'
 alias cdsk='cd ~/work/skinners'
@@ -111,6 +112,14 @@ function gg() {
 function gbt() {
 	git branch --track $2 $1/$2
 	git checkout $2
+}
+# Delete branch
+function gbd() {
+  git branch -d $1
+}
+# Create and checkout branch
+function gcob() {
+  git checkout -b $1
 }
 # Add remote repo on unfuddle
 function gru() {
