@@ -126,3 +126,6 @@ function gru() {
   git remote add origin git@cockatoosoftware.unfuddle.com:cockatoosoftware/$1.git
   git config remote.origin.push refs/heads/master:refs/heads/master
 }
+
+# grb
+alias grbc='grb create'
