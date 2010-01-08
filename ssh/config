@@ -59,3 +59,9 @@ Host sw
   Hostname swell2009.swellnet.com.au
   Port 22
   User deploy
+
+# treehouse
+Host treehouse.unfuddle.com
+	User git
+	IdentityFile ~/.ssh/treehouse_id_rsa
+	IdentitiesOnly yes

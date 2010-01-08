@@ -44,6 +44,8 @@ alias cdrt='cd ~/work/rmetime'
 alias cdcv='cd ~/work/conversations'
 alias cdcvp='cd /u/apps/conversations/current'
 alias cdsk='cd ~/work/skinners'
+alias cdos='cd ~/work/openshutters'
+alias cdoss='cd ~/work/openshutters/oss-git/oss'
 
 # Processes
 alias tu='top -o cpu' #cpu
@@ -94,6 +96,7 @@ alias ga='git add'
 alias gau='git add -u'
 alias gb='git branch'
 alias gba='git branch -a'
+alias gbd='git branch -d'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gco='git checkout'
@@ -103,7 +106,10 @@ alias gl='git pull'
 alias gp='git push'
 alias gst='git status'
 alias gr='git rebase'
+alias grc='git rebase --continue'
+alias grs='git rebase --skip'
 alias gm='git merge'
+alias gmt='git mergetool'
 # Commit pending changes and quote all args as message
 function gg() {
 	git commit -v -a -m "$*"
