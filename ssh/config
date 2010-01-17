@@ -10,6 +10,12 @@ Host kp
   HostName keithpitty.com
   User keith
   Port 22
+
+# Wattlebird
+Host wattlebird
+	HostName wattlebird.local
+	User deploy
+	Port 22
   
 # bivou.ac
 Host biv
