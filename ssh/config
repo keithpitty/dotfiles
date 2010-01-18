@@ -71,3 +71,9 @@ Host treehouse.unfuddle.com
 	User git
 	IdentityFile ~/.ssh/treehouse_id_rsa
 	IdentitiesOnly yes
+	
+# Bosch Rexroth
+Host wallace
+	Hostname beqik2.boschrexroth.com.au
+	User beqik2
+	Port 22
