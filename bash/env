@@ -4,3 +4,5 @@ export COCKATOO_GIT_USER="cockatoosoftware_keith"
 export JAVA_HOME=/Library/Java/Home
 export ARCHFLAGS="-arch x86_64"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
+
+if [[ -s /Users/keithpitty/.rvm/scripts/rvm ]] ; then source /Users/keithpitty/.rvm/scripts/rvm ; fi

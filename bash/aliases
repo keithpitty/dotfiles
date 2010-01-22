@@ -46,6 +46,8 @@ alias cdcvp='cd /u/apps/conversations/current'
 alias cdsk='cd ~/work/skinners'
 alias cdos='cd ~/work/openshutters'
 alias cdoss='cd ~/work/openshutters/oss-git/oss'
+alias cdosc='cd ~/work/openshutters/stable/oss-git/current'
+alias cdbq='cd ~/work/beqik2'
 
 # Processes
 alias tu='top -o cpu' #cpu
