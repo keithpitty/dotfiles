@@ -1,4 +1,4 @@
-export EDITOR="mate -w"
+# export EDITOR="mate -w"
 export GIT_EDITOR="mate -wl1"
 export COCKATOO_GIT_USER="cockatoosoftware_keith"
 export JAVA_HOME=/Library/Java/Home

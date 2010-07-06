@@ -11,6 +11,12 @@ Host kp
   User keith
   Port 22
 
+# Production slice (deploy user at rimuhosting)
+Host cs
+	HostName cockatoosoftware.com.au
+	User deploy
+	Port 22
+
 # Wattlebird
 Host wattlebird
 	HostName wattlebird.local
@@ -76,4 +82,8 @@ Host treehouse.unfuddle.com
 Host wallace
 	Hostname beqik2.boschrexroth.com.au
 	User beqik2
+	Port 22
+	
+Host otis
+	User git
 	Port 22

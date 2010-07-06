@@ -30,6 +30,9 @@ alias cf='cucumber features'
 # Capistrano
 alias capsd='cap staging deploy'
 
+# Shotguh
+alias sg='shotgun'
+
 # Change to directories
 alias ..='cd ..'
 alias cdh='cd ~'
@@ -39,15 +42,17 @@ alias cdcs='cd ~/work/cockatoo'
 alias cdkp='cd ~/work/kpdotcom'
 alias cdir='cd ~/work/isitrorosydyet'
 alias cdre='cd ~/work/readingeggs'
+alias cdrea='cd ~/work/readingeggs-alt/readingeggs'
 alias cdsw='cd ~/work/swellnet'
 alias cdrt='cd ~/work/rmetime'
 alias cdcv='cd ~/work/conversations'
 alias cdcvp='cd /u/apps/conversations/current'
 alias cdsk='cd ~/work/skinners'
 alias cdos='cd ~/work/openshutters'
-alias cdoss='cd ~/work/openshutters/oss-git/oss'
+alias cdoss='cd ~/work/openshutters/oss-git/current'
 alias cdosc='cd ~/work/openshutters/stable/oss-git/current'
 alias cdbq='cd ~/work/beqik2'
+alias cdcd='cd ~/work/cockatoodemo'
 
 # Processes
 alias tu='top -o cpu' #cpu
@@ -106,6 +111,7 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gdm='git diff master'
 alias gl='git pull'
+alias glr='git pull --rebase'
 alias gp='git push'
 alias gst='git status'
 alias gr='git rebase'
@@ -113,6 +119,8 @@ alias grc='git rebase --continue'
 alias grs='git rebase --skip'
 alias gm='git merge'
 alias gmt='git mergetool'
+alias gk='gitk'
+alias gph='git push heroku'
 # Commit pending changes and quote all args as message
 function gg() {
 	git commit -v -a -m "$*"
@@ -138,3 +146,54 @@ function gru() {
 
 # grb
 alias grbc='grb create'
+
+# rcov for Reading Eggs
+alias rcd='rm coverage.data'
+alias rcc='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/cucumber -- features/*.feature'
+alias rcsm='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/models/*'
+alias rcsh='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/helpers/*'
+alias rcsj='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/jobs/*'
+
+function rc() {
+	rm coverage.data
+	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/models/*
+	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/helpers/*
+	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/jobs/*
+	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/cucumber -- features/*.feature
+}
+
+# rcov for BeQIK2
+
+function rcbq() {
+	rm coverage.data
+	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/ /usr/local/bin/spec -- spec/models/*
+	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/ /usr/local/bin/spec -- spec/controllers/*
+	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/ /usr/local/bin/spec -- spec/importers/*
+}
+
+# rvm
+alias r186='rvm 1.8.6'
+alias r187='rvm 1.8.7'
+alias r191='rvm 1.9.1'
+alias r192='rvm 1.9.2'
+alias r8='rvm 1.8.7'
+alias r9='rvm 1.9.1'
+
+# rvm swaps for BeQIK2
+function r8bq() {
+	cp .rvmrc187 .rvmrc
+	cd ..
+	cd beqik2
+	echo "Changed ruby version. 'rvm info' now says:"
+	echo ''
+	rvm info
+}
+
+function r9bq() {
+	cp .rvmrc191 .rvmrc
+	cd ..
+	cd beqik2
+	echo "Changed ruby version. 'rvm info' now says:"
+	echo ''
+	rvm info
+}
