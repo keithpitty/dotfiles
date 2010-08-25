@@ -26,6 +26,7 @@ alias rsm='spec spec/models'
 # Cucumber
 alias c='cucumber'
 alias cf='cucumber features'
+alias ct='cucumber --tags'
 
 # Capistrano
 alias capsd='cap staging deploy'
@@ -53,6 +54,7 @@ alias cdoss='cd ~/work/openshutters/oss-git/current'
 alias cdosc='cd ~/work/openshutters/stable/oss-git/current'
 alias cdbq='cd ~/work/beqik2'
 alias cdcd='cd ~/work/cockatoodemo'
+alias cdlo='cd ~/work/leadingohs'
 
 # Processes
 alias tu='top -o cpu' #cpu
@@ -110,6 +112,7 @@ alias gcm='git commit --amend'
 alias gco='git checkout'
 alias gd='git diff'
 alias gdm='git diff master'
+alias gf='git fetch'
 alias gl='git pull'
 alias glr='git pull --rebase'
 alias gp='git push'
@@ -120,6 +123,7 @@ alias grs='git rebase --skip'
 alias gm='git merge'
 alias gmt='git mergetool'
 alias gk='gitk'
+alias gx='gitx'
 alias gph='git push heroku'
 # Commit pending changes and quote all args as message
 function gg() {
@@ -142,6 +146,11 @@ function gcob() {
 function gru() {
   git remote add origin git@cockatoosoftware.unfuddle.com:cockatoosoftware/$1.git
   git config remote.origin.push refs/heads/master:refs/heads/master
+}
+# Add remote repo on github
+function grg() {
+	git remote add origin git@github.com:keithpitty/$1.git
+	git push origin master
 }
 
 # grb
@@ -176,8 +185,43 @@ alias r186='rvm 1.8.6'
 alias r187='rvm 1.8.7'
 alias r191='rvm 1.9.1'
 alias r192='rvm 1.9.2'
-alias r8='rvm 1.8.7'
-alias r9='rvm 1.9.1'
+# alias r8='rvm 1.8.7'
+# alias r9='rvm 1.9.1'
+
+#rvm swaps given directory name assuming copies of .rvmrc exist
+function r8() {
+	cd ~/work/$1
+	cp .rvmrc187 .rvmrc
+	cd ..
+	cd $1
+	echo "Set ruby version to 1.8.7. 'rvm info' now says:"
+	echo ''
+	rvm info
+}
+
+function r9() {
+	cd ~/work/$1
+	cp .rvmrc191 .rvmrc
+	cd ..
+	cd $1
+	echo "Set ruby version to 1.9.1. 'rvm info' now says:"
+	echo ''
+	rvm info
+}
+
+function rv() {
+	cd ~/work/$1
+	cp .rvmrc$2 .rvmrc
+	resetdir $1
+}
+
+function resetdir() {
+	cd ..
+	cd $1
+	echo "Ruby version set. 'rvm info' now says:"
+	echo ''
+	rvm info
+}
 
 # rvm swaps for BeQIK2
 function r8bq() {

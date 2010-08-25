@@ -64,13 +64,6 @@ Host ey03-s00246
   Port         8246
   HostKeyAlias ey03-s00246
   User         blakepub
-  
-# Swellnet
-# production beta
-Host sw
-  Hostname swell2009.swellnet.com.au
-  Port 22
-  User deploy
 
 # treehouse
 Host treehouse.unfuddle.com
@@ -86,4 +79,11 @@ Host wallace
 	
 Host otis
 	User git
+	Port 22
+	
+# Leading OHS
+
+Host ohs
+	Hostname 74.207.245.89
+	User keith
 	Port 22
