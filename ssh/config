@@ -82,8 +82,13 @@ Host otis
 	Port 22
 	
 # Leading OHS
-
 Host ohs
 	Hostname 74.207.245.89
 	User keith
+	Port 22
+	
+# Central Coast Automatics
+Host cca
+	Hostname 122.100.2.139
+	User vpsadmin
 	Port 22
