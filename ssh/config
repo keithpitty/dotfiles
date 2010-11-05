@@ -31,10 +31,10 @@ Host biv
 
 # Blake Publishing (Reading Eggs)
 # production
-Host re1 # Known as ey03-s00379 at Blake
-  Hostname     74.201.254.36
-  Port         8379
-  HostKeyAlias ey03-s00379
+Host re1 tm23-s00045 re-prod1
+  Hostname     209.251.186.131
+  Port         7000
+  HostKeyAlias s00045
   User         blakepub
 Host ey03-s00379
   Hostname     74.201.254.36
@@ -42,28 +42,38 @@ Host ey03-s00379
   HostKeyAlias ey03-s00379
   User         blakepub
  
-Host re2 # Known as ey03-s00380 at Blake
-  Hostname     74.201.254.36
-  Port         8380
-  HostKeyAlias ey03-s00380
+Host re2 tm23-s00046 re-prod2 re-prod
+  Hostname     209.251.186.131
+  Port         7001
+  HostKeyAlias tm23-s00046
   User         blakepub
-Host ey03-s00380
-  Hostname     74.201.254.36
-  Port         8380
-  HostKeyAlias ey03-s00380
+  
+Host re3 tm23-s00047 re-prod3
+  Hostname     209.251.186.131
+  Port         7002
+  HostKeyAlias tm23-s00047
   User         blakepub
 
 # staging
-Host res # Known as ey03-s00246 at Blake
-   Hostname     74.201.254.36
-   Port         8246
-   HostKeyAlias ey03-s00246
-   User         blakepub
-Host ey03-s00246
-  Hostname     74.201.254.36
-  Port         8246
-  HostKeyAlias ey03-s00246
+Host res tm23-s00044 re-staging
+  Hostname     209.251.186.130 
+  Port         7000
+  HostKeyAlias tm23-s00044
   User         blakepub
+
+#integration (external)
+Host rei
+	Hostname     redev.pascalpress.com.au
+	Port         3004
+	HostKeyAlias integrity
+	User         integrity
+	
+#integration (internal)
+Host reii
+  Hostname     reci
+  Port         22
+  HostKeyAlias integrity
+  User         integrity
 
 # treehouse
 Host treehouse.unfuddle.com
@@ -77,12 +87,22 @@ Host wallace
 	User beqik2
 	Port 22
 	
+Host s-masterpak
+	Hostname 192.168.0.60
+	User beqik2
+	Port 22
+	
 Host otis
 	User git
 	Port 22
 	
 # Leading OHS
 Host ohs
+	Hostname 74.207.245.89
+	User leadingohs
+	Port 22
+	
+Host ohsk
 	Hostname 74.207.245.89
 	User keith
 	Port 22

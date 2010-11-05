@@ -1,4 +1,10 @@
-# Rails
+# Rails 3
+alias rs='rails s'
+alias rc='rails c'
+alias rd='rails db'
+alias rg='rails g'
+
+# Rails 2
 alias ss='./script/server'
 alias sc='./script/console'
 alias sd='./script/dbconsole'
@@ -28,10 +34,14 @@ alias c='cucumber'
 alias cf='cucumber features'
 alias ct='cucumber --tags'
 
+# autotest
+alias at='autotest'
+alias atf='AUTOFEATURE=true autotest'
+
 # Capistrano
 alias capsd='cap staging deploy'
 
-# Shotguh
+# Shotgun
 alias sg='shotgun'
 
 # Change to directories
@@ -99,6 +109,12 @@ alias apsp='sudo /usr/sbin/apachectl graceful-stop'
 alias apce='sudo mate /private/etc/apache2/httpd.conf' #edit apache config
 
 # Git
+
+# As the name implies, show the name of the current branch
+function git_current_branch() {
+  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
+}
+
 alias g='git status'
 alias gi='git init'
 alias ga='git add'
@@ -106,25 +122,29 @@ alias gau='git add -u'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbd='git branch -d'
+alias gbdd='git branch -D'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gcm='git commit --amend'
 alias gco='git checkout'
+alias gcb='git checkout -b'
 alias gd='git diff'
 alias gdm='git diff master'
 alias gf='git fetch'
 alias gl='git pull'
 alias glr='git pull --rebase'
-alias gp='git push'
+alias gp='git push origin HEAD:$(git_current_branch)'
 alias gst='git status'
-alias gr='git rebase'
+alias gr='git rebase -p'
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
-alias gm='git merge'
+alias gm='git merge --no-ff'
 alias gmt='git mergetool'
 alias gk='gitk'
 alias gx='gitx'
 alias gph='git push heroku'
+alias gup='git fetch origin && gr origin/$(git_current_branch)'
+
 # Commit pending changes and quote all args as message
 function gg() {
 	git commit -v -a -m "$*"
@@ -171,6 +191,10 @@ function rc() {
 	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/cucumber -- features/*.feature
 }
 
+# Reading Eggs
+alias re11='scp rei:Sites/reports/map11assets.txt .'
+alias redi="rsync -vzru --size-only --stats --delete --exclude='Thumbs.db' --exclude='.DS_Store' --exclude='.git' --exclude='.svn' rei:/Users/integrity/.integration_server/shared/bootstrap/ ~/work/readingeggs/public/bootstrap"
+
 # rcov for BeQIK2
 
 function rcbq() {
@@ -180,64 +204,3 @@ function rcbq() {
 	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/ /usr/local/bin/spec -- spec/importers/*
 }
 
-# rvm
-alias r186='rvm 1.8.6'
-alias r187='rvm 1.8.7'
-alias r191='rvm 1.9.1'
-alias r192='rvm 1.9.2'
-# alias r8='rvm 1.8.7'
-# alias r9='rvm 1.9.1'
-
-#rvm swaps given directory name assuming copies of .rvmrc exist
-function r8() {
-	cd ~/work/$1
-	cp .rvmrc187 .rvmrc
-	cd ..
-	cd $1
-	echo "Set ruby version to 1.8.7. 'rvm info' now says:"
-	echo ''
-	rvm info
-}
-
-function r9() {
-	cd ~/work/$1
-	cp .rvmrc191 .rvmrc
-	cd ..
-	cd $1
-	echo "Set ruby version to 1.9.1. 'rvm info' now says:"
-	echo ''
-	rvm info
-}
-
-function rv() {
-	cd ~/work/$1
-	cp .rvmrc$2 .rvmrc
-	resetdir $1
-}
-
-function resetdir() {
-	cd ..
-	cd $1
-	echo "Ruby version set. 'rvm info' now says:"
-	echo ''
-	rvm info
-}
-
-# rvm swaps for BeQIK2
-function r8bq() {
-	cp .rvmrc187 .rvmrc
-	cd ..
-	cd beqik2
-	echo "Changed ruby version. 'rvm info' now says:"
-	echo ''
-	rvm info
-}
-
-function r9bq() {
-	cp .rvmrc191 .rvmrc
-	cd ..
-	cd beqik2
-	echo "Changed ruby version. 'rvm info' now says:"
-	echo ''
-	rvm info
-}

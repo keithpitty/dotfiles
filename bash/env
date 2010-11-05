@@ -1,9 +1,13 @@
-# export EDITOR="mate -w"
+export EDITOR="mate -wl1"
 export GIT_EDITOR="mate -wl1"
 export COCKATOO_GIT_USER="cockatoosoftware_keith"
 export JAVA_HOME=/Library/Java/Home
+# export MAGICK_HOME=/Users/keithpitty/ImageMagick-6.6.4
 export ARCHFLAGS="-arch x86_64"
 export LESS=-R
+export REMOTE_RECI="redev.pascalpress.com.au:3004"
+# export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$MAGICK_HOME/bin:~/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
+# export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
 
 if [[ -s /Users/keithpitty/.rvm/scripts/rvm ]] ; then source /Users/keithpitty/.rvm/scripts/rvm ; fi
