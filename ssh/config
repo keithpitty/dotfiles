@@ -22,11 +22,17 @@ Host wattlebird
 	HostName wattlebird.local
 	User deploy
 	Port 22
+	
+# Myhealthworks Staging (Octopus)
+Host hws
+  HostName cockatoodev.com
+  User www-data
+  Port 22
   
-# bivou.ac
-Host biv
-  HostName bivou.ac
-  User bivouac
+# Myhealthworks Production
+Host hwp
+  HostName myhealthworks.com.au
+  User keith
   Port 22
 
 # Blake Publishing (Reading Eggs)
@@ -42,7 +48,7 @@ Host ey03-s00379
   HostKeyAlias ey03-s00379
   User         blakepub
  
-Host re2 tm23-s00046 re-prod2 re-prod
+Host re2 rep tm23-s00046 re-prod2 re-prod
   Hostname     209.251.186.131
   Port         7001
   HostKeyAlias tm23-s00046
@@ -82,10 +88,18 @@ Host treehouse.unfuddle.com
 	IdentitiesOnly yes
 	
 # Bosch Rexroth
-Host wallace
+Host bqp
 	Hostname beqik2.boschrexroth.com.au
 	User beqik2
 	Port 22
+Host beqik2app1
+	Hostname beqik2.boschrexroth.com.au
+	User beqik2
+	Port 22
+Host beqik2db
+  Hostname beqik2db
+  User beqik2
+  Port 22
 	
 Host s-masterpak
 	Hostname 192.168.0.60

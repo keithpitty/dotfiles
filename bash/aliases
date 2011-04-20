@@ -11,6 +11,12 @@ alias sd='./script/dbconsole'
 alias sg='./script/generate'
 alias sp='./script/plugin install'
 
+#Passenger
+alias pss='passenger start'
+
+#Grep within processes
+alias psg='ps -ef | grep '
+
 #Rake
 alias r='rake'
 alias rmg='rake db:migrate'
@@ -65,6 +71,9 @@ alias cdosc='cd ~/work/openshutters/stable/oss-git/current'
 alias cdbq='cd ~/work/beqik2'
 alias cdcd='cd ~/work/cockatoodemo'
 alias cdlo='cd ~/work/leadingohs'
+alias cdhw='cd ~/work/Myhealthworks'
+alias cdmh='cd ~/work/media-hub'
+alias cdyc='cd ~/work/yaml-config'
 
 # Processes
 alias tu='top -o cpu' #cpu
@@ -107,6 +116,9 @@ alias apr='sudo /usr/sbin/apachectl restart'
 alias apst='sudo /usr/sbin/apachectl -k start'
 alias apsp='sudo /usr/sbin/apachectl graceful-stop'
 alias apce='sudo mate /private/etc/apache2/httpd.conf' #edit apache config
+
+# Bundler
+alias be='bundle exec'
 
 # Git
 
@@ -176,6 +188,33 @@ function grg() {
 # grb
 alias grbc='grb create'
 
+# rvm
+alias rvmk='cp .rvmrc_keith .rvmrc'
+
+# Blake
+# deploy branch to integration: initial setup and deploy
+function cids() {
+  export BRANCH=$1 &&
+  cap integration deploy:setup && 
+  cap integration deploy &&
+  cap integration branches:create_db &&
+  cap integration branches:load_integration_clone &&
+  cap integration deploy:migrate &&
+  cap integration data:run_all &&
+  cap integration deploy:restart &&
+  unset BRANCH
+}
+
+#later deploys
+function cid() {
+  export BRANCH=$1 &&
+  cap integration deploy &&
+  cap integration deploy:migrate &&
+  cap integration data:run_all &&
+  cap integration deploy:restart &&
+  unset BRANCH
+}
+
 # rcov for Reading Eggs
 alias rcd='rm coverage.data'
 alias rcc='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/cucumber -- features/*.feature'
@@ -192,15 +231,5 @@ function rc() {
 }
 
 # Reading Eggs
-alias re11='scp rei:Sites/reports/map11assets.txt .'
+alias re12='scp rei:Sites/reports/map12assets.txt .'
 alias redi="rsync -vzru --size-only --stats --delete --exclude='Thumbs.db' --exclude='.DS_Store' --exclude='.git' --exclude='.svn' rei:/Users/integrity/.integration_server/shared/bootstrap/ ~/work/readingeggs/public/bootstrap"
-
-# rcov for BeQIK2
-
-function rcbq() {
-	rm coverage.data
-	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/ /usr/local/bin/spec -- spec/models/*
-	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/ /usr/local/bin/spec -- spec/controllers/*
-	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/ /usr/local/bin/spec -- spec/importers/*
-}
-
