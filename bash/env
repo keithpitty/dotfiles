@@ -6,6 +6,8 @@ export FLEX_HOME="/Applications/Adobe Flash Builder 4/sdks/4.0.0AIR2"
 export ARCHFLAGS="-arch x86_64"
 export LESS=-R
 export REMOTE_RECI="redev.pascalpress.com.au:3004"
+export REMOTE_RECI_SERVER="redev.pascalpress.com.au"
+export REMOTE_RECI_PORT="3004"
 # export BRANCH="feature/map12"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
 
