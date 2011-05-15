@@ -74,6 +74,7 @@ alias cdlo='cd ~/work/leadingohs'
 alias cdhw='cd ~/work/Myhealthworks'
 alias cdmh='cd ~/work/media-hub'
 alias cdyc='cd ~/work/yaml-config'
+alias cdr9='cd ~/work/rc9peeps'
 
 # Processes
 alias tu='top -o cpu' #cpu
@@ -156,6 +157,7 @@ alias gk='gitk'
 alias gx='gitx'
 alias gph='git push heroku'
 alias gup='git fetch origin && gr origin/$(git_current_branch)'
+alias gph='git push heroku master'
 
 # Commit pending changes and quote all args as message
 function gg() {
@@ -190,6 +192,9 @@ alias grbc='grb create'
 
 # rvm
 alias rvmk='cp .rvmrc_keith .rvmrc'
+
+# mongodb
+alias md='mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf'
 
 # Blake
 # deploy branch to integration: initial setup and deploy
