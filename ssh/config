@@ -26,7 +26,7 @@ Host wattlebird
 # Myhealthworks Staging (Octopus)
 Host hws
   HostName cockatoodev.com
-  User www-data
+  User keith
   Port 22
   
 # Myhealthworks Production
@@ -67,19 +67,33 @@ Host res tm23-s00044 re-staging
   HostKeyAlias tm23-s00044
   User         blakepub
 
-#integration (external)
-Host rei
+#reci integration (external)
+Host reci
 	Hostname     redev.pascalpress.com.au
 	Port         3004
 	HostKeyAlias integrity
 	User         integrity
 	
-#integration (internal)
-Host reii
+#reci integration (internal)
+Host recii
   Hostname     reci
   Port         22
   HostKeyAlias integrity
   User         integrity
+
+#redev integration (external)
+Host redev
+	Hostname     redev.blake.com.au
+	Port         3005
+	HostKeyAlias dev
+	User         dev
+	
+#redev integration (internal)
+Host redevi
+  Hostname     redev
+  Port         22
+  HostKeyAlias dev
+  User         dev
 
 # treehouse
 Host treehouse.unfuddle.com

@@ -18,9 +18,8 @@ alias pss='passenger start'
 alias psg='ps -ef | grep '
 
 #Rake
-alias r='rake'
-alias rmg='rake db:migrate'
-alias rtp='rake db:test:prepare'
+alias rmg='bundle exec rake db:migrate'
+alias rtp='bundle exec rake db:test:prepare'
 
 # Ruby
 alias irb='irb --readline -r irb/completion'
@@ -59,7 +58,7 @@ alias cdcs='cd ~/work/cockatoo'
 alias cdkp='cd ~/work/kpdotcom'
 alias cdir='cd ~/work/isitrorosydyet'
 alias cdre='cd ~/work/readingeggs'
-alias cdrea='cd ~/work/readingeggs-alt/readingeggs'
+alias cdre2='cd ~/work/readingeggs_rails23/readingeggs'
 alias cdsw='cd ~/work/swellnet'
 alias cdrt='cd ~/work/rmetime'
 alias cdcv='cd ~/work/conversations'
@@ -75,6 +74,10 @@ alias cdhw='cd ~/work/Myhealthworks'
 alias cdmh='cd ~/work/media-hub'
 alias cdyc='cd ~/work/yaml-config'
 alias cdr9='cd ~/work/rc9peeps'
+alias cdxs='cd ~/work/reading-eggspress-student'
+alias cdxd='cd ~/work/eggspress-data'
+alias cdig='cd ~/work/ideagora'
+alias cdbj='cd ~/work/bananajour'
 
 # Processes
 alias tu='top -o cpu' #cpu
@@ -117,9 +120,6 @@ alias apr='sudo /usr/sbin/apachectl restart'
 alias apst='sudo /usr/sbin/apachectl -k start'
 alias apsp='sudo /usr/sbin/apachectl graceful-stop'
 alias apce='sudo mate /private/etc/apache2/httpd.conf' #edit apache config
-
-# Bundler
-alias be='bundle exec'
 
 # Git
 
@@ -190,6 +190,13 @@ function grg() {
 # grb
 alias grbc='grb create'
 
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "[*]"
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
 # rvm
 alias rvmk='cp .rvmrc_keith .rvmrc'
 
@@ -220,21 +227,9 @@ function cid() {
   unset BRANCH
 }
 
-# rcov for Reading Eggs
-alias rcd='rm coverage.data'
-alias rcc='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/cucumber -- features/*.feature'
-alias rcsm='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/models/*'
-alias rcsh='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/helpers/*'
-alias rcsj='rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/jobs/*'
-
-function rc() {
-	rm coverage.data
-	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/models/*
-	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/helpers/*
-	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/spec -- spec/jobs/*
-	rcov --aggregate coverage.data -o "coverage" --sort coverage --rails --exclude osx\/objc,gems\/,spec\/,features\/,lib\/tasks\/,lib\/unfuddle\/ /usr/local/bin/cucumber -- features/*.feature
+# Reading Eggs
+function rema() {
+  scp reci:Sites/reports/map$1assets.txt .''
 }
 
-# Reading Eggs
-alias re12='scp rei:Sites/reports/map12assets.txt .'
 alias redi="rsync -vzru --size-only --stats --delete --exclude='Thumbs.db' --exclude='.DS_Store' --exclude='.git' --exclude='.svn' rei:/Users/integrity/.integration_server/shared/bootstrap/ ~/work/readingeggs/public/bootstrap"
