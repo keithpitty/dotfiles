@@ -1,3 +1,6 @@
+# Edit (using Sublime Text 2)
+alias e='subl'
+
 # Rails 3
 alias rs='rails s'
 alias rc='rails c'
@@ -24,15 +27,13 @@ alias rtp='bundle exec rake db:test:prepare'
 # Ruby
 alias irb='irb --readline -r irb/completion'
 alias rii='ri -Tf ansi'
-alias gemi='sudo gem install'
-alias gemin='sudo gem install --no-rdoc --no-ri'
-alias gemu='sudo gem uninstall'
-function gemiv {
-  sudo gem install $1 -v $2
-}
 
-# RSpec
-alias rsm='spec spec/models'
+# Bundler
+alias be='bundle exec'
+alias bi='bundle install'
+
+# Pry
+alias pr='pry -r ./config/environment'
 
 # Cucumber
 alias c='cucumber'
@@ -51,33 +52,33 @@ alias sg='shotgun'
 
 # Change to directories
 alias ..='cd ..'
-alias cdh='cd ~'
+alias cdba='cd ~/work/re-admin/readingeggs'
+alias cdbc='cd ~/work/blake-common'
+alias cdbd='cd ~/work/blake/shared/detachment'
+alias cdbj='cd ~/work/bananajour'
+alias cdbr='cd ~/work/book-reader-lib'
+alias cdcs='cd ~/work/cockatoo'
 alias cddf='cd ~/bin/dotfiles'
 alias cddl='cd ~/Downloads'
-alias cdcs='cd ~/work/cockatoo'
-alias cdkp='cd ~/work/kpdotcom'
-alias cdir='cd ~/work/isitrorosydyet'
-alias cdre='cd ~/work/readingeggs'
-alias cdre2='cd ~/work/readingeggs_rails23/readingeggs'
-alias cdsw='cd ~/work/swellnet'
-alias cdrt='cd ~/work/rmetime'
-alias cdcv='cd ~/work/conversations'
-alias cdcvp='cd /u/apps/conversations/current'
-alias cdsk='cd ~/work/skinners'
-alias cdos='cd ~/work/openshutters'
-alias cdoss='cd ~/work/openshutters/oss-git/current'
-alias cdosc='cd ~/work/openshutters/stable/oss-git/current'
-alias cdbq='cd ~/work/beqik2'
-alias cdcd='cd ~/work/cockatoodemo'
-alias cdlo='cd ~/work/leadingohs'
+alias cded='cd ~/work/eggspress-data'
+alias cdep='cd ~/work/ediblepatch'
+alias cdgc='cd ~/work/golfcentralcoast'
+alias cdgf='cd ~/work/greatfit'
+alias cdh='cd ~'
 alias cdhw='cd ~/work/Myhealthworks'
-alias cdmh='cd ~/work/media-hub'
-alias cdyc='cd ~/work/yaml-config'
-alias cdr9='cd ~/work/rc9peeps'
-alias cdxs='cd ~/work/reading-eggspress-student'
-alias cdxd='cd ~/work/eggspress-data'
 alias cdig='cd ~/work/ideagora'
-alias cdbj='cd ~/work/bananajour'
+alias cdkp='cd ~/work/kpdotcom'
+alias cdlo='cd ~/work/leadingohs'
+alias cdmh='cd ~/work/media-hub'
+alias cdra='cd ~/work/ruby.org.au'
+alias cdr9='cd ~/work/rc9peeps'
+alias cdre='cd ~/work/readingeggs'
+alias cdrn='cd ~/work/re-non-admin/readingeggs'
+alias cdrp='cd ~/play/refinerycms-play'
+alias cdrs='cd ~/work/readingeggs-shared'
+alias cdsk='cd ~/work/skinners'
+alias cdwd='cd ~/play/whinkingdrisky'
+alias cdxs='cd ~/work/reading-eggspress-student'
 
 # Processes
 alias tu='top -o cpu' #cpu
@@ -98,7 +99,7 @@ function take {
 
 # Quick editing and reloading
 alias reload='source ~/.bashrc' # reload shell
-alias ea='mate ~/bin/dotfiles/bash/aliases && reload' # edit aliases and reload
+alias ea='subl ~/bin/dotfiles/bash/aliases && reload' # edit aliases and reload
 
 # MySQL
 
@@ -147,6 +148,7 @@ alias gf='git fetch'
 alias gl='git pull'
 alias glr='git pull --rebase'
 alias gp='git push origin HEAD:$(git_current_branch)'
+alias gpb='git push banana master'
 alias gst='git status'
 alias gr='git rebase -p'
 alias grc='git rebase --continue'
@@ -210,7 +212,7 @@ function cids() {
   cap integration deploy:setup && 
   cap integration deploy &&
   cap integration branches:create_db &&
-  cap integration branches:load_integration_clone &&
+  cap integration branches:load_production_clone &&
   cap integration deploy:migrate &&
   cap integration data:run_all &&
   cap integration deploy:restart &&
@@ -230,6 +232,17 @@ function cid() {
 # Reading Eggs
 function rema() {
   scp reci:Sites/reports/map$1assets.txt .''
+}
+
+function rema1to8() {
+  scp reci:Sites/reports/map01assets.txt .''
+  scp reci:Sites/reports/map02assets.txt .''
+  scp reci:Sites/reports/map03assets.txt .''
+  scp reci:Sites/reports/map04assets.txt .''
+  scp reci:Sites/reports/map05assets.txt .''
+  scp reci:Sites/reports/map06assets.txt .''
+  scp reci:Sites/reports/map07assets.txt .''
+  scp reci:Sites/reports/map08assets.txt .''
 }
 
 alias redi="rsync -vzru --size-only --stats --delete --exclude='Thumbs.db' --exclude='.DS_Store' --exclude='.git' --exclude='.svn' rei:/Users/integrity/.integration_server/shared/bootstrap/ ~/work/readingeggs/public/bootstrap"

@@ -1,17 +1,19 @@
-export EDITOR="mate -wl1"
+export EDITOR="subl -w"
 export GIT_EDITOR="vim"
 export COCKATOO_GIT_USER="cockatoosoftware_keith"
 export JAVA_HOME=/Library/Java/Home
-export FLEX_HOME="/Applications/Adobe Flash Builder 4/sdks/4.0.0AIR2"
-export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch i386"
 export LESS=-R
-export NODE_PATH="/usr/local/lib/node"
+export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 export REMOTE_RECI="redev.pascalpress.com.au:3004"
 export REMOTE_RECI_SERVER="redev.pascalpress.com.au"
 export REMOTE_RECI_PORT="3004"
 export REMOTE_REDEV="redev.blake.com.au:3005"
-# export BRANCH="feature/map12"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
+# export USING_POW_FOR_ED="true"
+# export EGGSPRESS_DATA="http://eggspress-data.dev"
+export REX_STUDENT="http://rex-student.dev"
 
 if [[ -s /Users/keithpitty/.rvm/scripts/rvm ]] ; then source /Users/keithpitty/.rvm/scripts/rvm ; fi
 if [[ -s /Users/keithpitty/.bundler-exec.sh ]] ; then source /Users/keithpitty/.bundler-exec.sh ; fi

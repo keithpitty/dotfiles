@@ -35,37 +35,73 @@ Host hwp
   User keith
   Port 22
 
-# Blake Publishing (Reading Eggs)
-# production
-Host re1 tm23-s00045 re-prod1
-  Hostname     209.251.186.131
+# Blake eLearning
+# RE production
+Host re1 tm23-s00164 re-prod1 re-prod
+  Hostname     209.251.186.134
   Port         7000
-  HostKeyAlias s00045
-  User         blakepub
-Host ey03-s00379
-  Hostname     74.201.254.36
-  Port         8379
-  HostKeyAlias ey03-s00379
-  User         blakepub
- 
-Host re2 rep tm23-s00046 re-prod2 re-prod
-  Hostname     209.251.186.131
-  Port         7001
-  HostKeyAlias tm23-s00046
-  User         blakepub
-  
-Host re3 tm23-s00047 re-prod3
-  Hostname     209.251.186.131
-  Port         7002
-  HostKeyAlias tm23-s00047
   User         blakepub
 
-# staging
-Host res tm23-s00044 re-staging
-  Hostname     209.251.186.130 
-  Port         7000
-  HostKeyAlias tm23-s00044
+Host re2 tm23-s00165 re-prod2
+  Hostname     209.251.186.134
+  Port         7001
   User         blakepub
+
+Host re3 tm23-s00166 re-prod3
+  Hostname     209.251.186.134
+  Port         7002
+  User         blakepub
+
+Host re4 tm23-s00167 re-prod4
+  Hostname     209.251.186.134
+  Port         7003
+  User         blakepub
+
+ Host re-db-slave-tunnel
+   User blakepub
+   Hostname 209.251.186.134
+   Port 7000
+   ServerAliveInterval 15
+   LocalForward 33060 blakepublishing-mysql-production-replica-0:3306
+
+# rex prod, ed prod
+  Host rex1 tm23-s00174 rex-prod rex-prod1 ed-prod ed-prod1
+   Hostname 209.251.186.215
+   Port 7000
+   HostKeyAlias tm23-s00174
+   User blakepub
+
+  Host rex2 tm23-s00175 rex-prod2
+   Hostname 209.251.186.215
+   Port 7001
+   HostKeyAlias tm23-s00175
+   User blakepub
+
+# rex prod mongo, ed prod mongo
+ Host tm23-s00176 rex-db rex-db1 ed-db ed-db1
+  Hostname 209.251.186.215
+  Port 7002
+  HostKeyAlias tm23-s00176
+  User blakepub
+
+ Host tm23-s00177 rex-db2 ed-db2
+  Hostname 209.251.186.215
+  Port 7003
+  HostKeyAlias tm23-s00177
+  User blakepub
+
+
+# staging
+Host rexs tm23-s00044 ed-staging rex-staging
+  Hostname 209.251.186.130
+  Port 7000
+  HostKeyAlias tm23-s00044
+  User blakepub
+
+ Host res tm23-s00162 re-staging
+   Hostname     209.251.186.130
+   Port         7001
+   User         blakepub
 
 #reci integration (external)
 Host reci
@@ -94,6 +130,13 @@ Host redevi
   Port         22
   HostKeyAlias dev
   User         dev
+
+#re-admin
+Host rea
+  Hostname     re-admin.blake.com.au
+  Port		   22
+  HostKeyAlias re-admin
+  User 		   re-admin
 
 # treehouse
 Host treehouse.unfuddle.com
