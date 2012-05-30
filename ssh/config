@@ -98,7 +98,7 @@ Host rexs tm23-s00044 ed-staging rex-staging
   HostKeyAlias tm23-s00044
   User blakepub
 
- Host res tm23-s00162 re-staging
+ Host res tm23-s00162 re-staging reas re-admin-staging
    Hostname     209.251.186.130
    Port         7001
    User         blakepub
@@ -119,7 +119,7 @@ Host recii
 
 #redev integration (external)
 Host redev
-	Hostname     redev.blake.com.au
+	Hostname     integration.blake.com.au
 	Port         3005
 	HostKeyAlias dev
 	User         dev
@@ -167,11 +167,17 @@ Host otis
 	User git
 	Port 22
 	
-# Leading OHS
-Host ohs
+# Leading OHS Production
+Host lop
 	Hostname 74.207.245.89
 	User leadingohs
 	Port 22
+
+# Leading OHS Staging
+Host los
+  Hostname 50.116.9.246
+  User leadingohs
+  Port 22
 	
 Host ohsk
 	Hostname 74.207.245.89
