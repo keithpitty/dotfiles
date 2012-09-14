@@ -14,6 +14,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
 # export USING_POW_FOR_ED="true"
 # export EGGSPRESS_DATA="http://eggspress-data.dev"
 export REX_STUDENT="http://rex-student.dev"
+export RECI="http://192.168.0.13"
 
 if [[ -s /Users/keithpitty/.rvm/scripts/rvm ]] ; then source /Users/keithpitty/.rvm/scripts/rvm ; fi
 if [[ -s /Users/keithpitty/.bundler-exec.sh ]] ; then source /Users/keithpitty/.bundler-exec.sh ; fi

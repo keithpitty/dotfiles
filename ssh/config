@@ -167,14 +167,14 @@ Host otis
 	User git
 	Port 22
 	
-# Leading OHS Production
-Host lop
+# Leading WHS Production
+Host lwp
 	Hostname 74.207.245.89
 	User leadingohs
 	Port 22
 
-# Leading OHS Staging
-Host los
+# Leading WHS Staging
+Host lws
   Hostname 50.116.9.246
   User leadingohs
   Port 22
