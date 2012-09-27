@@ -11,6 +11,7 @@ export REMOTE_RECI_SERVER="redev.pascalpress.com.au"
 export REMOTE_RECI_PORT="3004"
 export REMOTE_REDEV="redev.blake.com.au:3005"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
+export CC=/usr/local/bin/gcc-4.2
 # export USING_POW_FOR_ED="true"
 # export EGGSPRESS_DATA="http://eggspress-data.dev"
 export REX_STUDENT="http://rex-student.dev"

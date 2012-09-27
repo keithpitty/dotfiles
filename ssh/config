@@ -98,10 +98,15 @@ Host rexs tm23-s00044 ed-staging rex-staging
   HostKeyAlias tm23-s00044
   User blakepub
 
- Host res tm23-s00162 re-staging reas re-admin-staging
-   Hostname     209.251.186.130
-   Port         7001
-   User         blakepub
+Host res tm23-s00162 re-staging
+  Hostname     209.251.186.130
+  Port         7001
+  User         blakepub
+
+Host reas re-admin-staging
+  Hostname     re-admin-staging.blakedev.com
+  Port         22
+  User         re-admin
 
 #reci integration (external)
 Host reci
