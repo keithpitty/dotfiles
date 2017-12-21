@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/keithpitty/play/conway/lib/conway'
+let g:netrw_dirhist_2='/Users/keithpitty/gemcache'
+let g:netrw_dirhist_3='/Users/keithpitty/work/rmacheck/lib/tasks'
+let g:netrw_dirhist_4='/Users/keithpitty/Blake/book-reader/lib'
