@@ -1,5 +1,11 @@
+# Edit (using vim)
+alias e='vim -N'
+
 # Edit (using Sublime Text 2)
-alias e='subl'
+alias es='subl'
+
+# Exit
+alias x='exit'
 
 # Rails 3
 alias rs='rails s'
@@ -7,42 +13,70 @@ alias rc='rails c'
 alias rd='rails db'
 alias rg='rails g' 
 
-# Rails 2
-alias ss='./script/server'
-alias sc='./script/console'
-alias sd='./script/dbconsole'
-alias sg='./script/generate'
-alias sp='./script/plugin install'
+# Start Sinatra apps so that they can be used via the server's IP address
+# cockatoo
+alias ssc='ruby cockatoo.rb -o 0.0.0.0'
 
-#Passenger
+# Passenger
 alias pss='passenger start'
 
-#Grep within processes
+# Grep within processes
 alias psg='ps -ef | grep '
 
-#Rake
+# Rake
 alias rmg='bundle exec rake db:migrate'
-alias rtp='bundle exec rake db:test:prepare'
+
+# Prepare and run tests
+alias sp='bundle exec spring rspec'
+alias pad='export RAILS_ENV=test && bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:schema:load'
+alias tad='export RAILS_ENV=test && bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:schema:load && bundle exec rspec spec'
+alias tbs='spring rspec -p 20 spec'
+alias pbs='export RAILS_ENV=test && bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:schema:load'
+alias tpms='bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake db:test:prepare'
+alias tms='bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake db:test:prepare && bundle exec rspec spec'
+alias pre='export RAILS_ENV=test && bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:schema:load' 
+alias tre='export RAILS_ENV=test && bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:schema:load && bundle exec rspec spec'
+alias pxs='export RAILS_ENV=test && bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:schema:load'
+alias txs='export RAILS_ENV=test && export HTTP_TIMEOUT=30 && export MAX_ATTEMPTS=10 && export LANG=en_AU.UTF-8 && bundle exec rspec spec'
 
 # Ruby
 alias irb='irb --readline -r irb/completion'
 alias rii='ri -Tf ansi'
+alias rws='ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 8000, :DocumentRoot => Dir.pwd); trap(\"INT\") { s.shutdown }; s.start"'
 
 # Bundler
+alias b='bundle'
 alias be='bundle exec'
 alias bi='bundle install'
+alias bu='bundle update'
+
+function bp() {
+  bundle --path ~/.appgems/$1 --clean
+}
+
+# tmuxinator
+alias mco='cd ~/work/cockatoo && bundle --path ~/.appgems/cockatoo --clean && tmuxinator co'
+alias mfb='tmuxinator fb'
+alias mfp='cd ~/play/ruby-fp && bundle --path ~/.appgems/ruby-fp --clean && tmuxinator fp'
+alias mgc='cd ~/work/golfcentralcoast && bundle --path ~/.appgems/golfcentralcoast --clean && tmuxinator gc'
+alias mko='cd ~/work/kpdotorg && bundle --path ~/.appgems/kpdotorg --clean && tmuxinator kpo'
+alias mkp='cd ~/work/kpdotcom && bundle --path ~/.appgems/kpdotcom --clean && tmuxinator kp'
+alias mns='cd ~/Dropbox/personal/writing/reflections-on-a-northern-summer && tmuxinator ns'
+alias mpf='cd ~/work/pittyfamily && bundle --path ~/.appgems/pittyfamily --clean && tmuxinator pf'
+alias mpw='cd ~/openaustralia/publicwhip && bundle --path ~/.appgems/publicwhip --clean && tmuxinator pw'
+alias mrl='cd ~/play/rumbl && tmuxinator rl'
+alias mra='cd ~/code/rails && bundle --path ~/.appgems/rails --clean && tmuxinator ra'
+alias mrc='cd ~/play/railscamp22 && bundle --path ~/.appgems/railscamp22 --clean && tmuxinator rc'
+alias mre='cd ~/play/tag_along && bundle --path ~/.appgems/tag_along --clean && tmuxinator re'
+alias mrk='cd ~/play/react-kp && tmuxinator rk'
+alias mrr='cd ~/work/remoteretro && bundle --path ~/.appgems/remoteretro --clean && tmuxinator rr'
+alias msk='cd ~/work/skinners2 && bundle --path ~/.appgems/skinners2 --clean && tmuxinator sk'
+alias mst='cd ~/work/cultureamp/survey-tool && bundle --path ~/.appgems/survey-tool --clean && tmuxinator st'
+alias mwj='cd ~/work/wgcjc && bundle --path ~/.appgems/wgcjc --clean && tmuxinator wj'
+alias mwv='cd ~/work/winecountryvillas && bundle --path ~/.appgems/winecountryvillas && tmuxinator wv'
 
 # Pry
 alias pr='pry -r ./config/environment'
-
-# Cucumber
-alias c='cucumber'
-alias cf='cucumber features'
-alias ct='cucumber --tags'
-
-# autotest
-alias at='autotest'
-alias atf='AUTOFEATURE=true autotest'
 
 # Capistrano
 alias capsd='cap staging deploy'
@@ -52,35 +86,28 @@ alias sg='shotgun'
 
 # Change to directories
 alias ..='cd ..'
-alias cdb='cd ~/Blake'
-alias cdba='cd ~/Blake/blake-admin'
-alias cdbc='cd ~/Blake/blake-common'
-alias cdbd='cd ~/Blake/blake/shared/detachment'
+alias cd18='cd ~/tc/i18n-hygiene'
 alias cdbj='cd ~/work/bananajour'
-alias cdbs='cd ~/Blake/blake-shared'
-alias cdcs='cd ~/work/cockatoo'
+alias cdco='cd ~/work/cockatoo'
 alias cddf='cd ~/bin/dotfiles'
 alias cddl='cd ~/Downloads'
-alias cded='cd ~/Blake/eggspress-data'
-alias cdep='cd ~/work/ediblepatch'
+alias cdf5='cd ~/work/rmacheck'
 alias cdgc='cd ~/work/golfcentralcoast'
-alias cdgf='cd ~/work/greatfit'
+alias cdgk='cd ~/code/guard-konacha-rails'
 alias cdh='cd ~'
-alias cdhw='cd ~/work/Myhealthworks'
 alias cdig='cd ~/work/ideagora'
 alias cdkp='cd ~/work/kpdotcom'
 alias cdlo='cd ~/work/leadingohs'
-alias cdmh='cd ~/work/media-hub'
 alias cdra='cd ~/work/ruby.org.au'
-alias cdrc='cd ~/work/ruby-conf-au-one-pager'
-alias cdr9='cd ~/work/rc9peeps'
-alias cdre='cd ~/Blake/readingeggs'
-alias cdrn='cd ~/Blake/re-non-admin/readingeggs'
-alias cdrp='cd ~/play/refinerycms-play'
-alias cdrs='cd ~/Blake/readingeggs-shared'
-alias cdsk='cd ~/work/skinners'
-alias cdwd='cd ~/play/whinkingdrisky'
-alias cdxs='cd ~/Blake/reading-eggspress-student'
+alias cdrr='cd ~/work/remoteretro'
+alias cdsk='cd ~/work/skinners2'
+alias cdsp='cd ~/work/succ-players'
+alias cdwb='cd ~/work/webflexbookings'
+alias cdwj='cd ~/work/wgcjc'
+alias cdwv='cd ~/work/winecountryvillas'
+
+# Local network
+alias ws='ssh keithpitty@wattlebird'
 
 # Processes
 alias tu='top -o cpu' #cpu
@@ -101,7 +128,13 @@ function take {
 
 # Quick editing and reloading
 alias reload='source ~/.bashrc' # reload shell
-alias ea='subl ~/bin/dotfiles/bash/aliases && reload' # edit aliases and reload
+alias ea='vim -N ~/bin/dotfiles/bash/aliases && reload' # edit aliases and reload
+
+# Global find and replace
+
+function replace {
+  find ./ -type f -exec sed -i '' "s/$1/$2/g" {} +
+}
 
 # MySQL
 
@@ -109,7 +142,6 @@ alias ms=/usr/local/mysql/bin/mysql
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 alias msa=/usr/local/mysql/bin/mysqladmin
-alias mst='sudo mysqld_safe'
 alias msp='mysqladmin -u root shutdown'
 function msd {
   mysqldump --add-locks -e -n -t $1 -u root > db/$1.sql
@@ -133,16 +165,20 @@ function git_current_branch() {
 
 alias g='git status'
 alias gi='git init'
-alias ga='git add'
+alias ga='git add -A'
 alias gau='git add -u'
 alias gb='git branch'
 alias gba='git branch -a'
+alias gbc='cleanup_branches'
 alias gbd='git branch -d'
 alias gbdd='git branch -D'
+alias gbu='git fetch origin && git branch -u origin/$(git_current_branch)'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gcm='git commit --amend'
 alias gco='git checkout'
+alias gcod='git checkout develop'
+alias gcom='git checkout master && gup'
 alias gcb='git checkout -b'
 alias gd='git diff'
 alias gdm='git diff master'
@@ -152,28 +188,26 @@ alias gff='git flow feature'
 alias gfr='git flow release'
 alias gl='git l'
 alias gp='git push origin HEAD:$(git_current_branch)'
-alias gpb='git push banana master'
 alias gph='git push heroku master'
-alias gst='git status'
 alias gr='git rebase -p'
 alias grc='git rebase --continue'
+alias grm='git rebase master'
 alias grs='git rebase --skip'
 alias gm='git merge --no-ff'
 alias gmt='git mergetool'
 alias gk='gitk'
 alias gx='gitx'
 alias gsi='git submodule init'
-alias gsu='git submodule init'
 alias gup='git fetch origin && gr origin/$(git_current_branch)'
 
 # Commit pending changes and quote all args as message
 function gg() {
-	git commit -v -a -m "$*"
+	git commit -v --all -m "$*"
 }
 # Set up a tracking branch from [remote] [branch_name]
 function gbt() {
-	git branch --track $2 $1/$2
-	git checkout $2
+	git branch --track $1 origin/$1
+	git checkout $1
 }
 # Delete branch
 function gbd() {
@@ -182,11 +216,6 @@ function gbd() {
 # Create and checkout branch
 function gcob() {
   git checkout -b $1
-}
-# Add remote repo on unfuddle
-function gru() {
-  git remote add origin git@cockatoosoftware.unfuddle.com:cockatoosoftware/$1.git
-  git config remote.origin.push refs/heads/master:refs/heads/master
 }
 # Add remote repo on github
 function grg() {
@@ -204,50 +233,55 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-# rvm
-alias rvmk='cp .rvmrc_keith .rvmrc'
+# Homebrew
+alias bm='cd ~/work/brew-maintain && rake brew:maintain'
 
-# mongodb
-alias md='mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf'
+# ctags
+alias ct='ctags -R --exclude=.git --exclude=log *'
 
-# Blake
-# deploy branch to integration: initial setup and deploy
-function cids() {
-  export BRANCH=$1 &&
-  cap integration deploy:setup && 
-  cap integration deploy &&
-  cap integration branches:create_db &&
-  cap integration branches:load_production_clone &&
-  cap integration deploy:migrate &&
-  cap integration data:run_all &&
-  cap integration deploy:restart &&
-  unset BRANCH
+# tmux
+function tmk() {
+  tmux kill-session -t $1
 }
 
-#later deploys
-function cid() {
-  export BRANCH=$1 &&
-  cap integration deploy &&
-  cap integration deploy:migrate &&
-  cap integration data:run_all &&
-  cap integration deploy:restart &&
-  unset BRANCH
+alias tml='tmux ls'
+
+# rbenv install
+function rbi() {
+  export CC=/usr/bin/gcc
+  ruby-install $1
 }
 
-# Reading Eggs
-function rema() {
-  scp reci:Sites/reports/map$1assets.txt .''
+# pip install
+function pi() {
+  export CC=/user/bin/gcc
+  pip install --user $1
 }
 
-function rema1to8() {
-  scp reci:Sites/reports/map01assets.txt .''
-  scp reci:Sites/reports/map02assets.txt .''
-  scp reci:Sites/reports/map03assets.txt .''
-  scp reci:Sites/reports/map04assets.txt .''
-  scp reci:Sites/reports/map05assets.txt .''
-  scp reci:Sites/reports/map06assets.txt .''
-  scp reci:Sites/reports/map07assets.txt .''
-  scp reci:Sites/reports/map08assets.txt .''
+# TC
+alias dwh='bundle exec rake spec:rubocop'
+alias tcp='RAILS_ENV=test bundle exec rake spec:prepare'
+
+# Rails Camp
+alias rcs="ssh -A rubyaustralia@128.250.195.154"
+
+# RemoteRetro
+alias rrsp='ssh deploy@remoteretro.io'
+
+# heroku
+alias heroku='/usr/local/bin/heroku'
+alias hc14='heroku stack:set cedar-14 && git commit --allow-empty -m "Upgrading to Cedar-14" && git push heroku master'
+
+# postgres
+alias fixpg='rm /usr/local/var/postgres/postmaster.pid'
+
+# highlight copy
+function hc() {
+  highlight -O rtf $1 --font-size 24 --font Monaco --style solarized-dark -W -J 50 -j 3 --src-lang ruby | pbcopy
 }
 
-alias redi="rsync -vzru --size-only --stats --delete --exclude='Thumbs.db' --exclude='.DS_Store' --exclude='.git' --exclude='.svn' rei:/Users/integrity/.integration_server/shared/bootstrap/ ~/work/readingeggs/public/bootstrap"
+# zeus
+alias z='zeus'
+alias zg='zeus g'
+alias zr='zeus rspec'
+alias zs='zeus start'
