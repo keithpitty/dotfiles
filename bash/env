@@ -1,21 +1,22 @@
-export EDITOR="subl -w"
-export GIT_EDITOR="vim"
-export COCKATOO_GIT_USER="cockatoosoftware_keith"
+export EDITOR="/usr/local/bin/vim"
+export GIT_EDITOR="/usr/local/bin/vim"
 export JAVA_HOME=/Library/Java/Home
-# export ARCHFLAGS="-arch x86_64"
-export ARCHFLAGS="-arch i386"
 export LESS=-R
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
-export REMOTE_RECI="redev.pascalpress.com.au:3004"
-export REMOTE_RECI_SERVER="redev.pascalpress.com.au"
-export REMOTE_RECI_PORT="3004"
-export REMOTE_REDEV="redev.blake.com.au:3005"
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:$PATH
-export CC=/usr/local/bin/gcc-4.2
-# export USING_POW_FOR_ED="true"
-# export EGGSPRESS_DATA="http://eggspress-data.dev"
-export REX_STUDENT="http://rex-student.dev"
-export RECI="http://192.168.0.13"
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:~/bin:/usr/local/share/npm/bin:$PATH
+export CC=llvm-gcc
 
-if [[ -s /Users/keithpitty/.rvm/scripts/rvm ]] ; then source /Users/keithpitty/.rvm/scripts/rvm ; fi
-if [[ -s /Users/keithpitty/.bundler-exec.sh ]] ; then source /Users/keithpitty/.bundler-exec.sh ; fi
+RUBIES+=(~/.rbenv/versions/*)
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
+export REDIS_URL='redis://localhost:6379/'
+export GOPATH=$HOME
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+export PATH="$PATH:$GOPATH/bin"
+
+export WEBPACK_DEV_SERVER_HOST='http://localhost:8080'
