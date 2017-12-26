@@ -1,5 +1,4 @@
 .DS_Store
 ssh/.config.*
-vim/bundle/**/
 nvim/**
 tmux/tmuxinator/**
