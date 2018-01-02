@@ -6,13 +6,6 @@ Host *
 # Keep connections alive
 ServerAliveInterval 120
 
-# Cockatoo Software
-# Dev slice (Octopus)
-Host cdv
-  HostName cockatoodev.com
-  User vpsadmin
-  Port 22
-
 # Wattlebird
 Host wattlebird
 	HostName wattlebird.local
