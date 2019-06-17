@@ -55,8 +55,10 @@ function bp() {
 }
 
 # tmuxinator
+alias mch='cd ~/work/chil/interview_keithpitty --path ~/.appgems/chil --clean && tmuxinator ch'
 alias mco='cd ~/work/cockatoo && bundle --path ~/.appgems/cockatoo --clean && tmuxinator co'
 alias mfb='tmuxinator fb'
+alias mfn='cd ~/work/facesplusnames && tmuxinator fn'
 alias mfp='cd ~/play/ruby-fp && bundle --path ~/.appgems/ruby-fp --clean && tmuxinator fp'
 alias mgc='cd ~/work/golfcentralcoast && bundle --path ~/.appgems/golfcentralcoast --clean && tmuxinator gc'
 alias mko='cd ~/work/kpdotorg && bundle --path ~/.appgems/kpdotorg --clean && tmuxinator kpo'
@@ -266,7 +268,7 @@ alias tcp='RAILS_ENV=test bundle exec rake spec:prepare'
 alias rcs="ssh -A rubyaustralia@128.250.195.154"
 
 # RemoteRetro
-alias rrsp='ssh deploy@remoteretro.io'
+alias rrs='ssh root@remoteretro.io'
 
 # heroku
 alias heroku='/usr/local/bin/heroku'

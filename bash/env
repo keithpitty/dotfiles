@@ -20,3 +20,6 @@ export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export PATH="$PATH:$GOPATH/bin"
 
 export WEBPACK_DEV_SERVER_HOST='http://localhost:8080'
+
+export STRIPE_PUBLISHABLE_KEY=pk_test_7igBmYH6b3C0VBbYul6zOeNS
+export STRIPE_SECRET_KEY=sk_test_bzmxaXA2RQYnbrG9OflO3yvS

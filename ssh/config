@@ -11,3 +11,9 @@ Host wattlebird
 	HostName wattlebird.local
 	User deploy
 	Port 22
+
+# RemoteRetro
+Host remoteretro
+  Hostname remoteretro.io
+  User root
+  Port 22
